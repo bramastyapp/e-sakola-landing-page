@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html, body{
+    background-color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+
+nav {
+    display: flex;
+    background-color: #D6E6F2;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    box-shadow:  0 5px 15px -6px #777;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 30%;
+    justify-content: space-between;
+}
+nav ul li a {
+    color: #303481;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    color: rgb(155, 173, 255);
+}
+nav img {
+    display: flex;
+    height: 40px;
+}
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -10px;
+    top: -7px;
+    opacity: 0;
+    cursor: pointer;
+}
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #303481;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+.menu-toggle span:last-child {
+    transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ :nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+    background-color: #ffffff;
+}
+.menu-toggle input:checked ~ :last-child{
+    transform: rotate(-45deg);
+    background-color: #ffffff;
+}
+.menu-toggle input:checked ~ :nth-child(3){
+    transform: scale(0);
+    opacity: 0;
+}
+/* Responsive Breakpoint */
+
+/* ukuran mobile */
+@media screen and (max-width: 758px) {
+    .menu-toggle {
+        display: flex;
+    }
+    nav ul {
+        position: absolute;
+        margin: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: #303481;
+        z-index: 0;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+    nav ul.slide{
+        transform: translateX(0);
+        opacity: 1;
+
+    }
+    nav ul li a {
+        color: #ffffff;
+    }
+}
+
+/* Akhir Navbar */
+
+
+/* Guru */
+.guru {
+    /* max-width: 100%; */
+    color: #303481;
+    font-size: 14px;
+    text-align: center;
+}
+.guru article {
+
+    padding: 20px;
+}
+.gambar-guru {
+    margin: auto;
+    margin-top : 100px;
+}
+.gambar-guru img {
+    max-width: 250px;
+    padding: 20px;
+}
+/* Akhir Guru */
+
+/* Siswa */
+.siswa{
+    color: #303481;
+    font-size: 14px;
+    text-align: center;
+}
+.gambar-siswa {
+    margin: auto;
+    margin-top : 100px;
+}
+.gambar-siswa img {
+    max-width: 250px;
+    padding: 20px;
+}
+.siswa-isi{
+    padding: 20px;
+}
+/* Akhir Siswa */
+
+/* Tentang Kami */
+.container-profile {
+    margin-top: 100px;
+    color: #303481;
+}
+.card {
+    /* border: 2px solid #D6E6F2; */
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    margin: 20px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    box-shadow:  6px 10px 15px -6px #777;
+    transition: 0.5s;
+}
+
+.foto {
+    margin: auto;
+    margin-top: 10px;
+    height: 150px;
+}
+.foto img {
+    border-radius: 50%;
+    width: 150px;
+}
+.konten {
+    padding: 10px;
+    text-align: center;
+}
+.konten .btn-link{
+    text-align: center;
+    color: #303481;
+    margin-top: 20px;
+    border-radius: 25px;
+    padding: 2px 15px;
+    border: 2px solid #303481;
+    width: 110px;
+    transition: 0.5s;
+}
+.btn-link:hover{
+    background-color: rgb(155, 173, 255);
+    color: rgb(221, 227, 253);
+    border: 2px solid rgb(155, 173, 255);
+}
+a {
+    text-decoration: none;
+}
+span {
+    font-weight: bold;
+}
+footer {
+    padding: 20px;
+    color: #303481;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: #D6E6F2;
+    text-align: center;
+ }
+/* Akhir Tentang Kami */
+
+
+
+/* Responsive */
+@media(min-width: 758px){
+    .guru {
+        display: flex;
+        font-size: 25px;
+        margin: 20px;
+        /* margin-top: 100px; */
+    }
+    .guru p {
+        font-size: 20px;
+    }
+    .guru article {
+        padding: 100px;
+        margin: auto;
+        order: 1;
+    }
+    .gambar-guru{
+        order : 2;
+    }
+    .gambar-guru img {
+        max-width: 500px;
+    }
+    .siswa {
+        display: flex;
+        font-size: 25px;
+        font-weight: 500;
+        margin: 20px;
+        /* margin-top: 100px; */
+    }
+    .siswa p {
+        font-size: 20px;
+    }
+    .siswa-isi {
+        padding: 100px;
+        margin: auto;
+    }
+    .gambar-siswa img {
+        max-width: 500px;
+    }
+
+    .container-profile {
+        margin: 50px auto;
+        margin-top: 100px;
+        display: flex;
+    }
+
+    .card.besar {
+        transform: scale(1.1);
+    }
+    .card.besar:hover {
+        transform: scale(1.2);
+    }
+    .card:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+
+    footer {
+        font-size: 18px;
+        font-weight: 700;
+    }
+}
+/* Akhir Responsive */
